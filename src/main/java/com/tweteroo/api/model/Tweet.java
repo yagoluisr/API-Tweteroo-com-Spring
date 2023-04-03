@@ -1,6 +1,6 @@
 package com.tweteroo.api.model;
 
-import com.tweteroo.api.dto.UserDTO;
+import org.springframework.data.annotation.Reference;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -13,20 +13,18 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 @NoArgsConstructor
-public class UserModel {
-
-    public UserModel(UserDTO data) {
-        this.username = data.username();
-        this.avatar = data.avatar();
-    }
-
+public class Tweet {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(length = 10, nullable = false)
+    @Column(length = 5, nullable = false)
     private String username;
 
-    @Column(nullable = false)
+    @Column(length = 4, nullable = false)
     private String avatar;
+
+    @Column(length = 2, nullable = false)
+    private String text;
 }
