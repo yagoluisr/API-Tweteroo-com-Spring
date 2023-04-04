@@ -1,5 +1,7 @@
 package com.tweteroo.api.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,5 +16,10 @@ public class TweetService {
 
     public void create(TweetDTO data) {
         repository.save(new Tweet(data));
+    }
+
+    public List<Tweet> getAllTweetsByUsername(String username) {
+
+        return repository.findByUsername(username);
     }
 }
