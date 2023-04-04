@@ -8,15 +8,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tweteroo.api.dto.UserDTO;
-import com.tweteroo.api.model.UserModel;
-import com.tweteroo.api.repository.UserRepository;
+import com.tweteroo.api.service.UserService;
 
 @RestController
 @RequestMapping("/sign-up")
 public class SignUp {
     
     @Autowired
-    private UserRepository repository;
+    private UserService service;
 
     @GetMapping
     public String test() {
@@ -26,7 +25,7 @@ public class SignUp {
     @PostMapping
     public void create(@RequestBody UserDTO data) {
         
-        repository.save(new UserModel(data));
+        service.create(data);
     }
 
 }

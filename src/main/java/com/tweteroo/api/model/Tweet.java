@@ -1,7 +1,5 @@
 package com.tweteroo.api.model;
 
-import org.springframework.data.annotation.Reference;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
