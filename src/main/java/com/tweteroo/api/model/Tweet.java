@@ -20,8 +20,8 @@ public class Tweet {
         this.avatar = data.avatar();
         this.text = data.text();
     }
-    
-        @Id
+        
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
