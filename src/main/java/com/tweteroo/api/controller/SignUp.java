@@ -2,7 +2,6 @@ package com.tweteroo.api.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,11 +17,6 @@ public class SignUp {
     
     @Autowired
     private UserService service;
-
-    @GetMapping
-    public String test() {
-        return "Deu bom !";
-    }
 
     @PostMapping
     public void create(@RequestBody UserDTO data) {

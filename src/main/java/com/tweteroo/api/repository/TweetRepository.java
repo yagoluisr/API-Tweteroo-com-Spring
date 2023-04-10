@@ -11,8 +11,6 @@ import com.tweteroo.api.model.Tweet;
 public interface TweetRepository extends JpaRepository<Tweet, Long>{
     public List<Tweet> findByUsername(String username);
 
-    public List<Tweet> findByOrderByIdDesc();
-
     @Query("FROM Tweet tweet WHERE tweet.username = :username")
     public List<Tweet> findByUsernameEquals(@Param("username") String username);
 }

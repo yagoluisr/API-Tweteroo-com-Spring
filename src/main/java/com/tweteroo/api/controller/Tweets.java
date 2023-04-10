@@ -39,7 +39,14 @@ public class Tweets {
 
     @PostMapping
     public void postTweet(@RequestBody TweetDTO data) {
+        System.out.println(data);
 
-        service.create(data);
+try {
+    service.create(data);
+} catch (Exception e) {
+    // TODO: handle exception
+}
+
+        
     }
 }
